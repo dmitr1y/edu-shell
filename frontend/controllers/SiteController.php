@@ -212,23 +212,6 @@ class SiteController extends Controller
         ]);
     }
 
-    /**
-     * Displays modules page.
-     *
-     * @return string
-     */
-//    public function actionModules($module='')
-//    {
-//        var_dump($module);
-//        exit;
-//        if ($module!='')
-//            $this->redirect(array('site/index'));
-//
-//        $offline_modules=ModulesSearch::find()
-//            ->all();
-//        $count=ModulesSearch::find()->count();
-//        return $this->render('modules', ['module' => $offline_modules, 'modules_count' => $count]);
-//    }
 
     /**
      * Displays lectures page.
