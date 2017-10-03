@@ -55,5 +55,7 @@ class EduModule
         $this->libs=$data_arr['libs'];
         $this->id=$data_arr['id'];
     }
+
+
 //  todo загрузка инфы из БД
 }

@@ -23,8 +23,20 @@ class DefaultController extends Controller
         $count=ModulesSearch::find()->count();
         return $this->render('modules', ['module' => $offline_modules, 'modules_count' => $count]);
     }
+
+    /**
+     * @return mixed
+     *
+     */
     public function actionProtocolvisualizer()
     {
+        $test_data1=OfflineModules::find()->all();
+        $module=new EduModule();
+        $module->setData($test_data1[0]);
+        return $this->render('offline_module',['edu_module'=> $module]);
+    }
+
+    public function actionSamoproveryaemye_zadachi_po_kombinatorike(){
         $test_data1=OfflineModules::find()->all();
         $module=new EduModule();
         $module->setData($test_data1[0]);
