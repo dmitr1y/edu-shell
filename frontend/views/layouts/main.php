@@ -36,8 +36,8 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Главная', 'url' => ['/site/index']],
-        ['label' => 'Модули', 'url' => ['/site/modules']],
+        ['label' => 'Главная', 'url' => ['/']],
+        ['label' => 'Модули', 'url' => ['/modules']],
         ['label' => 'Контакты', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
@@ -72,8 +72,6 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; Edu-modules <?= date('Y') ?></p>
-
-<!--        <p class="pull-right">--><?//= Yii::powered() ?><!--</p>-->
     </div>
 </footer>
 

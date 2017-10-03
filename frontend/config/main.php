@@ -41,46 +41,14 @@ return [
             'showScriptName' => false,
             'enableStrictParsing' => true,
             'rules' => [
-                'modules' => 'site/modules',
-                [
-                    'pattern' => '',
-                    'route' => 'site/index',
-                    'suffix' => ''
-                ],
-                [
-                    'pattern' => 'modules',
-                    'route' => 'site/modules',
-                    'suffix' => ''
-                ],
-                [
-                    'pattern' => 'modules/protocolvisualizer',
-                    'route' => 'site/protocolvisualizer',
-                    'suffix' => ''
-                ],
+                'modules' => 'edu/default/index',
+                'modules/<action>' => 'edu/default/<action>',
+                '' => 'site/index',
+//                'site/<action>' => 'site/<action>',
 
-//                [
-//                    'pattern' => 'найти-<search:\w*>-<year:\d{4}>',
-//                    'route' => 'main/search',
-//                    'suffix' => '.html'
-//                ],
-//                [
-//                    'pattern' => 'найти-<search:\w*>',
-//                    'route' => 'main/search',
-//                    'suffix' => '.html'
-//                ],
-                [
-                    'pattern' => '<controller>/<action>/<id:\d+>',
-                    'route' => '<controller>/<action>',
-                    'suffix' => ''
-                ],
                 [
                     'pattern' => '<controller>/<action>',
                     'route' => '<controller>/<action>',
-                    'suffix' => ''
-                ],
-                [
-                    'pattern' => '<module>/<controller>/<action>/<id:\d+>',
-                    'route' => '<module>/<controller>/<action>',
                     'suffix' => ''
                 ],
                 [
@@ -90,7 +58,12 @@ return [
                 ],
             ],
         ],
-        'db'  => require('db.php'),
+        'db' => require('db.php'),
+    ],
+    'modules' => [
+        'edu' => [
+            'class' => 'app\modules\edu\EduModule',
+        ],
     ],
     'params' => $params,
 ];

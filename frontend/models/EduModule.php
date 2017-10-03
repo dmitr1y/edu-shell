@@ -1,7 +1,8 @@
 <?php
 
-namespace app\models;
+namespace frontend\models;
 
+use Yii;
 use yii\web\Application;
 
 class EduModule

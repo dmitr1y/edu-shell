@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use app\models\ModulesSearch;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -216,22 +217,18 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionModules()
-    {
-//        $offline_modules=new EduModule();
-        $offline_modules=ModulesSearch::find()
-            ->all();
-//        var_dump($offline_modules);
+//    public function actionModules($module='')
+//    {
+//        var_dump($module);
 //        exit;
-        $count=ModulesSearch::find()->count();
-//        $arr->name;
-//        var_dump($count);
+//        if ($module!='')
+//            $this->redirect(array('site/index'));
 //
-//        exit;
-//        $offline_modules->setData($arr);
-//        $offline_modules=OfflineModules::find()->one();
-        return $this->render('modules', ['module' => $offline_modules, 'modules_count' => $count]);
-    }
+//        $offline_modules=ModulesSearch::find()
+//            ->all();
+//        $count=ModulesSearch::find()->count();
+//        return $this->render('modules', ['module' => $offline_modules, 'modules_count' => $count]);
+//    }
 
     /**
      * Displays lectures page.
