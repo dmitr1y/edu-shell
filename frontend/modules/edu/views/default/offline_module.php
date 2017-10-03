@@ -32,6 +32,4 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
     <p> <a href="<?=$edu_module->getLink()?>" class="btn btn-default">Скачать модуль</a> </p>
-
-<!--    <code>--><?//= __FILE__ ?><!--</code>-->
 </div>
