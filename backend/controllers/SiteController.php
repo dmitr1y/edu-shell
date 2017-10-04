@@ -102,7 +102,7 @@ class SiteController extends Controller
     }
 
     public function actionPanel(){
-        echo 'ITS WORK!'; exit;
-        return $this->render('edu_modules/index');
+
+        return $this->render('offline_modules/index');
     }
 }

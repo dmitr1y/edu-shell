@@ -43,6 +43,8 @@ return [
             'rules' => [
                 '' => 'site/index',
                 'modules' => '',
+                'panel' => 'offlinemodules/index',
+                'panel/<action>' => 'offlinemodules/<action>',
                 ],
         ],
         'authManager' => [
