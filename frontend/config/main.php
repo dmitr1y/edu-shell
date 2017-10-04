@@ -42,7 +42,7 @@ return [
             'enableStrictParsing' => true,
             'rules' => [
                 'modules' => 'edu/default/index',
-                'modules/<action>' => 'edu/default/<action>',
+                'modules/<slug>' => 'edu/default/offline',
                 '' => 'site/index',
 //                'site/<action>' => 'site/<action>',
 

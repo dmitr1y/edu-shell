@@ -4,32 +4,31 @@
 
 use yii\helpers\Html;
 
-$this->title = $edu_module->getName();
+$this->title = $model['name'];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div>
     <h1><?= Html::encode($this->title)?></h1>
 
     <p>
-        <?=$edu_module->getDescription()?>
+        <?=$model['description']?>
     </p>
 
     <p>
         Системные требования: <?php
-        $systems=$edu_module->getSys();
-        if ($systems['win'])
-            echo "Windows ";
-        if ($systems['lin'])
-            echo "Linux";
-        if ($systems['mac'])
-            echo "Mas OS ";
+            if ($model['win'])
+                echo 'Windows ';
+        if ($model['lin'])
+            echo 'Linux';
+        if ($model['mac'])
+            echo 'Mac OS';
         ?>
     </p>
 
     <p>
         <h3>Инструкция по запуску модуля</h3>
-        <?=$edu_module->getHowTo();?>
+        <?=$model['instruction']?>
     </p>
 
-    <p> <a href="<?=$edu_module->getLink()?>" class="btn btn-default">Скачать модуль</a> </p>
+    <p> <a href="<?=$model['url']?>" class="btn btn-default">Скачать модуль</a> </p>
 </div>

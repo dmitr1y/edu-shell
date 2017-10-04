@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use yii\behaviors\SluggableBehavior;
+
 /**
  * This is the model class for table "offline_modules".
  *
@@ -17,6 +19,16 @@ namespace app\models;
  */
 class OfflineModules extends \yii\db\ActiveRecord
 {
+
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => SluggableBehavior::className(),
+                'attribute' => 'title',
+            ],
+        ];
+    }
     /**
      * @inheritdoc
      */
