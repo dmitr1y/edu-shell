@@ -30,6 +30,11 @@ class SiteController extends Controller
                         'allow' => true,
                         'roles' => ['@'],
                     ],
+                    [
+                        'actions' => ['panel'],
+                        'allow' => true,
+                        'roles' => ['viewAdmin'],
+                    ],
                 ],
             ],
             'verbs' => [
@@ -94,5 +99,10 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionPanel(){
+        echo 'ITS WORK!'; exit;
+        return $this->render('edu_modules/index');
     }
 }

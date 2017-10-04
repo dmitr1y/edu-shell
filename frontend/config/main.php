@@ -58,6 +58,9 @@ return [
                 ],
             ],
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
         'db' => require('db.php'),
     ],
     'modules' => [

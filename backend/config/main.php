@@ -41,7 +41,12 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-            ],
+                '' => 'site/index',
+                'modules' => '',
+                ],
+        ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
         ],
         'db'  => require('db.php'),
     ],
