@@ -61,11 +61,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-//        if (Yii::$app->user->can('viewPost'))
-//            echo 'CAN';
-//        else
-//            echo 'CANT';
-//        exit;
         return $this->render('index');
     }
 
@@ -100,10 +95,5 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
-    }
-
-    public function actionPanel(){
-
-        return $this->render('offline_modules/index');
     }
 }

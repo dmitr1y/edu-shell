@@ -9,6 +9,7 @@ use yii\widgets\Pjax;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Offline Modules';
+$this->params['breadcrumbs'][] = ['label' => 'Модули', 'url' => ['/modules']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="offline-modules-index">
@@ -28,12 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             ['attribute' => 'name',
                 'label' => 'Название модуля',
-                'contentOptions' => ['style' => 'width:70px; word-wrap: break-word;'],
             ],
-
             ['attribute' => 'description',
                 'label' => 'Описание',
-//                ),
             ],
 
 //            'win',
