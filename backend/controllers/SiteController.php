@@ -90,29 +90,6 @@ class SiteController extends Controller
         }
     }
 
-//    public function actionLogin(){
-//        if (!Yii::$app->user->isGuest) {
-//            return $this->goHome();
-//        }
-//
-//        $model = new LoginForm();
-//
-//        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-//            /** @var User $user */
-//            $user = $model->getUser();
-//            if (!empty($user) && Yii::$app->authManager->checkAccess($user->getId(), 'admin')) {
-//                // Don't validate twice
-//                $model->login(false);
-//                return $this->goBack();
-//            } else {
-//                $model->addError('email', 'This user is not authorized for administration');
-//            }
-//        }
-//        return $this->render('login', [
-//                'model' => $model,
-//            ]);
-//    }
-
     /**
      * Logout action.
      *

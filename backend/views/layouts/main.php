@@ -37,11 +37,15 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Главная', 'url' => ['/site/index']],
-        ['label' => 'Модули', 'url' => ['/modules']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Войти', 'url' => ['/site/login']];
     } else {
+//        check admin permissions
+        if (Yii::$app->user->can('viewAdmin')){
+            ['label' => 'Модули', 'url' => ['/modules']];
+
+        }
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
