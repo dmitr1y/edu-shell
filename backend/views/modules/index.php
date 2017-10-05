@@ -1,8 +1,9 @@
 <?php
 
-use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Html;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\OfflineModulesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -18,15 +19,26 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Create Offline Modules', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-<?php Pjax::begin(); ?>    <?= GridView::widget([
+    <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'name',
-            'description:ntext',
+            ['attribute' => 'name',
+                'label' => 'Название модуля',
+                'contentOptions' => ['style' => 'width:70px; word-wrap: break-word;'],
+            ],
+
+            ['attribute' => 'description',
+                'label' => 'Описание',
+                'headerOptions' => ['style' => 'width:40px; word-wrap: break-word;'],
+//                'htmlOptions'=>array(
+//                    'class'=>'te',
+//                ),
+            ],
+
             'win',
             'mac',
             // 'lin',
@@ -38,4 +50,4 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-<?php Pjax::end(); ?></div>
+    <?php Pjax::end(); ?></div>
