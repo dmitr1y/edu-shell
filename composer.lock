@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2099dd55ad0ea56853b9f025aa8e2928",
+    "content-hash": "00df53247a641614b2518ae584292f1b",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -372,6 +372,43 @@
                 "mailer"
             ],
             "time": "2017-05-01T15:54:03+00:00"
+        },
+        {
+            "name": "yandex/translate-api",
+            "version": "1.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yandex-php/translate-api.git",
+                "reference": "c99e69cde3e688fc0f99c4d8a21585226a8e1938"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yandex-php/translate-api/zipball/c99e69cde3e688fc0f99c4d8a21585226a8e1938",
+                "reference": "c99e69cde3e688fc0f99c4d8a21585226a8e1938",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yandex\\Translate\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Gusakov",
+                    "email": "dev@nkt.me"
+                }
+            ],
+            "description": "Client for Yandex.Translate API",
+            "time": "2015-07-27T15:00:45+00:00"
         },
         {
             "name": "yiisoft/yii2",

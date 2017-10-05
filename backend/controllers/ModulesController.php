@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use backend\models\OfflineModules;
 use backend\models\OfflineModulesSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -26,6 +27,16 @@ class ModulesController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'view', 'create', 'update', 'delete'],
+                        'allow' => true,
+                        'roles' => ['viewAdmin'],
+                    ],
+                ],
+            ]
         ];
     }
 

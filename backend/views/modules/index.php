@@ -33,14 +33,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['attribute' => 'description',
                 'label' => 'Описание',
-                'headerOptions' => ['style' => 'width:40px; word-wrap: break-word;'],
-//                'htmlOptions'=>array(
-//                    'class'=>'te',
 //                ),
             ],
 
-            'win',
-            'mac',
+//            'win',
+//            'mac',
             // 'lin',
             // 'libs',
             // 'instruction:ntext',

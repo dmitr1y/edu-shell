@@ -42,7 +42,8 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
-                'modules' => '',
+                'modules' => 'modules/index',
+                'modules/<action>' => 'modules/<action>',
                 'panel' => 'offlinemodules/index',
                 'panel/<action>' => 'offlinemodules/<action>',
                 ],
