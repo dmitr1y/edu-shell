@@ -45,8 +45,6 @@ return [
                 'modules/offline/<slug>' => 'edu/default/offline',
                 'modules/online/<slug>' => 'edu/default/online',
                 '' => 'site/index',
-//                'site/<action>' => 'site/<action>',
-
                 [
                     'pattern' => '<controller>/<action>',
                     'route' => '<controller>/<action>',
