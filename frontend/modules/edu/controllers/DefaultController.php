@@ -4,6 +4,7 @@ namespace app\modules\edu\controllers;
 
 use app\models\ModulesSearch;
 use app\models\OfflineModules;
+use app\models\OnlineModules;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
@@ -15,6 +16,15 @@ class DefaultController extends Controller
     protected function findModelBySlug($slug)
     {
         if (($model = OfflineModules::findOne(['slug' => $slug])) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException();
+        }
+    }
+
+    protected function findOnlineModelBySlug($slug)
+    {
+        if (($model = OnlineModules::findOne(['slug' => $slug])) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException();
@@ -36,6 +46,12 @@ class DefaultController extends Controller
     public function actionOffline($slug){
         return $this->render('offline_module',[
             'model' => $this->findModelBySlug($slug),
+        ]);
+    }
+
+    public function actionOnline($slug){
+        return $this->render('online_module',[
+            'model' => $this->findOnlineModelBySlug($slug),
         ]);
     }
 }

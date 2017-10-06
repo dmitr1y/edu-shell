@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <ul class="nav nav-tabs nav-stacked">
     <?php
     for ($i=0;$i<$modules_count;$i++){
-        echo "<li><a href=\"/modules/".\app\models\OfflineModules::translit($module[$i]->name)."\" title=\"Нажмите, чтобы перейти к модулю\">".$module[$i]->name."</a></li>";
+        echo "<li><a href=\"/modules/offline/".\app\models\OfflineModules::translit($module[$i]->name)."\" title=\"Нажмите, чтобы перейти к модулю\">".$module[$i]->name."</a></li>";
     }
     ?>
     </ul>

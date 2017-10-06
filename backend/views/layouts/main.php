@@ -42,7 +42,6 @@ AppAsset::register($this);
         $menuItems[] = ['label' => 'Войти', 'url' => ['/site/login']];
     } else {
 //        check admin permissions
-//        var_dump(Yii::$app->user->can('viewAdmin')); exit;
         if (Yii::$app->user->can('viewAdmin')){
             $menuItems= [
                     ['label' => 'Модули', 'url' => ['/modules']],

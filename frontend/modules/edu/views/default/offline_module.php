@@ -5,7 +5,7 @@
 use yii\helpers\Html;
 
 $this->title = $model['name'];
-$this->params['breadcrumbs'][] = ['label' => 'Модули', 'url' => ['/modules']];
+$this->params['breadcrumbs'][] = ['label' => 'Оффлайн модули', 'url' => ['/modules']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div>
