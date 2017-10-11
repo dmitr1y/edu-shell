@@ -45,7 +45,7 @@ AppAsset::register($this);
         if (Yii::$app->user->can('viewAdmin')){
             $menuItems= [
                     ['label' => 'Модули', 'url' => ['/modules']],
-                    ['label' => 'Пользователи', 'url' => ['/users']],
+                    ['label' => 'Пользователи', 'url' => ['/user']],
                     ['label' => 'Новости', 'url' => ['/news']],
             ];
 

@@ -44,7 +44,9 @@ return [
                 '' => 'site/index',
                 'modules' => 'modules/index',
                 'login' => 'site/login',
-                'modules/<action>' => 'modules/<action>'
+                'modules/<action>' => 'modules/<action>',
+                'user/<action>' => 'user/<action>',
+                'user' => 'user/index'
                 ],
         ],
         'authManager' => [
