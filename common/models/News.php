@@ -13,6 +13,7 @@ use Yii;
  * @property string $author
  * @property string $date
  * @property string $type
+ * @property string $slug
  */
 class News extends \yii\db\ActiveRecord
 {
@@ -31,7 +32,7 @@ class News extends \yii\db\ActiveRecord
     {
         return [
             [['header', 'content', 'author'], 'required'],
-            [['content'], 'string'],
+            [['content', 'slug'], 'string'],
             [['date'], 'safe'],
             [['header', 'author', 'type'], 'string', 'max' => 255],
         ];
@@ -49,6 +50,7 @@ class News extends \yii\db\ActiveRecord
             'author' => 'Author',
             'date' => 'Date',
             'type' => 'Type',
+            'slug' => 'Slug',
         ];
     }
 

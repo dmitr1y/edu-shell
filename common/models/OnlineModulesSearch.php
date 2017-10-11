@@ -19,7 +19,7 @@ class OnlineModulesSearch extends OnlineModules
     {
         return [
             [['id'], 'integer'],
-            [['name', 'url', 'desription', 'slug'], 'safe'],
+            [['name', 'url', 'description', 'slug'], 'safe'],
         ];
     }
 
@@ -64,7 +64,7 @@ class OnlineModulesSearch extends OnlineModules
 
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'url', $this->url])
-            ->andFilterWhere(['like', 'desription', $this->desription])
+            ->andFilterWhere(['like', 'description', $this->description])
             ->andFilterWhere(['like', 'slug', $this->slug]);
 
         return $dataProvider;

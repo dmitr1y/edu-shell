@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'url') ?>
 
-    <?= $form->field($model, 'desription') ?>
+    <?= $form->field($model, 'description') ?>
 
     <?= $form->field($model, 'slug') ?>
 

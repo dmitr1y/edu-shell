@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use common\models\News;
 
 /**
- * NewsSearch represents the model behind the search form about `app\models\News`.
+ * NewsSearch represents the model behind the search form about `common\models\News`.
  */
 class NewsSearch extends News
 {
@@ -19,7 +19,7 @@ class NewsSearch extends News
     {
         return [
             [['id'], 'integer'],
-            [['header', 'content', 'author', 'date', 'type'], 'safe'],
+            [['header', 'content', 'author', 'date', 'type', 'slug'], 'safe'],
         ];
     }
 
@@ -66,7 +66,8 @@ class NewsSearch extends News
         $query->andFilterWhere(['like', 'header', $this->header])
             ->andFilterWhere(['like', 'content', $this->content])
             ->andFilterWhere(['like', 'author', $this->author])
-            ->andFilterWhere(['like', 'type', $this->type]);
+            ->andFilterWhere(['like', 'type', $this->type])
+            ->andFilterWhere(['like', 'slug', $this->slug]);
 
         return $dataProvider;
     }

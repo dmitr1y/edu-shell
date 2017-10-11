@@ -29,7 +29,7 @@ class OnlineModules extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'url'], 'required'],
-            [['desription'], 'string'],
+            [['description'], 'string'],
             [['name', 'url'], 'string', 'max' => 255],
         ];
     }
@@ -43,7 +43,7 @@ class OnlineModules extends \yii\db\ActiveRecord
             'column_1' => 'Column 1',
             'name' => 'Name',
             'url' => 'Url',
-            'desription' => 'Desription',
+            'description' => 'description',
         ];
     }
 

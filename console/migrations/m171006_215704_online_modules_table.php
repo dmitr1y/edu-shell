@@ -17,7 +17,7 @@ class m171006_215704_online_modules_table extends Migration
                 'id' => $this->primaryKey(),
                 'name' => $this->string()->notNull()->unique(),
                 'url' => $this->text()->notNull(),
-                'desription' => $this->text(),
+                'description' => $this->text(),
                 'slug' => $this->string()->unique(),
             ], $tableOptions);
         }

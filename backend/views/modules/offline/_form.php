@@ -1,5 +1,6 @@
 <?php
 
+use mihaildev\ckeditor\CKEditor;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -14,7 +15,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'description')->widget(CKEditor::className(),[
+        'editorOptions' => [
+            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+            'inline' => false, //по умолчанию false
+        ],
+    ]);?>
 
     <?= $form->field($model, 'win')->textInput() ?>
 
@@ -24,7 +30,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'libs')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'instruction')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'instruction')->widget(CKEditor::className(),[
+        'editorOptions' => [
+            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+            'inline' => false, //по умолчанию false
+        ],
+    ]);?>
 
     <?= $form->field($model, 'url')->textarea(['rows' => 6]) ?>
 
