@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\OfflineModulesSearch */
+/* @var $searchModel common\models\OnlineModulesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Offline Modules';
+$this->title = 'Online Modules';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="offline-modules-index">
+<div class="online-modules-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Offline Modules', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Online Modules', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -26,14 +26,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'description:ntext',
-            'win',
-            'mac',
-            // 'lin',
-            // 'libs',
-            // 'instruction:ntext',
-            // 'url:ntext',
-            // 'slug',
+            'url:url',
+            'desription:ntext',
+            'slug',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

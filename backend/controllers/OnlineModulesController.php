@@ -3,20 +3,20 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\OfflineModules;
-use common\models\OfflineModulesSearch;
+use common\models\OnlineModules;
+use common\models\OnlineModulesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ModulesController implements the CRUD actions for OfflineModules model.
+ * OnlineModulesController implements the CRUD actions for OnlineModules model.
  */
-class ModulesController extends Controller
+class OnlineModulesController extends Controller
 {
     public function getViewPath()
     {
-        return Yii::getAlias('@backend/views/modules/offline');
+        return Yii::getAlias('@backend/views/modules/online');
     }
     /**
      * @inheritdoc
@@ -34,12 +34,12 @@ class ModulesController extends Controller
     }
 
     /**
-     * Lists all OfflineModules models.
+     * Lists all OnlineModules models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OfflineModulesSearch();
+        $searchModel = new OnlineModulesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -49,7 +49,7 @@ class ModulesController extends Controller
     }
 
     /**
-     * Displays a single OfflineModules model.
+     * Displays a single OnlineModules model.
      * @param integer $id
      * @return mixed
      */
@@ -61,13 +61,13 @@ class ModulesController extends Controller
     }
 
     /**
-     * Creates a new OfflineModules model.
+     * Creates a new OnlineModules model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new OfflineModules();
+        $model = new OnlineModules();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -79,7 +79,7 @@ class ModulesController extends Controller
     }
 
     /**
-     * Updates an existing OfflineModules model.
+     * Updates an existing OnlineModules model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -98,7 +98,7 @@ class ModulesController extends Controller
     }
 
     /**
-     * Deletes an existing OfflineModules model.
+     * Deletes an existing OnlineModules model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -111,15 +111,15 @@ class ModulesController extends Controller
     }
 
     /**
-     * Finds the OfflineModules model based on its primary key value.
+     * Finds the OnlineModules model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return OfflineModules the loaded model
+     * @return OnlineModules the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = OfflineModules::findOne($id)) !== null) {
+        if (($model = OnlineModules::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

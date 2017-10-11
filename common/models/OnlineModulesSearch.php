@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use common\models\OnlineModules;
 
 /**
- * OnlineModulesSearch represents the model behind the search form about `app\models\OnlineModules`.
+ * OnlineModulesSearch represents the model behind the search form about `common\models\OnlineModules`.
  */
 class OnlineModulesSearch extends OnlineModules
 {
@@ -18,8 +18,8 @@ class OnlineModulesSearch extends OnlineModules
     public function rules()
     {
         return [
-            [['column_1'], 'integer'],
-            [['name', 'url', 'desription'], 'safe'],
+            [['id'], 'integer'],
+            [['name', 'url', 'desription', 'slug'], 'safe'],
         ];
     }
 
@@ -59,12 +59,13 @@ class OnlineModulesSearch extends OnlineModules
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'column_1' => $this->column_1,
+            'id' => $this->id,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'url', $this->url])
-            ->andFilterWhere(['like', 'desription', $this->desription]);
+            ->andFilterWhere(['like', 'desription', $this->desription])
+            ->andFilterWhere(['like', 'slug', $this->slug]);
 
         return $dataProvider;
     }

@@ -4,13 +4,13 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model common\models\OfflineModules */
+/* @var $model common\models\OnlineModules */
 
-$this->title = 'Create Offline Modules';
-$this->params['breadcrumbs'][] = ['label' => 'Offline Modules', 'url' => ['index']];
+$this->title = 'Create Online Modules';
+$this->params['breadcrumbs'][] = ['label' => 'Online Modules', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="offline-modules-create">
+<div class="online-modules-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

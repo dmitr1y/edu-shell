@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\OfflineModules */
+/* @var $model common\models\OnlineModules */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Offline Modules', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Online Modules', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="offline-modules-view">
+<div class="online-modules-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,13 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'description:ntext',
-            'win',
-            'mac',
-            'lin',
-            'libs',
-            'instruction:ntext',
-            'url:ntext',
+            'url:url',
+            'desription:ntext',
             'slug',
         ],
     ]) ?>

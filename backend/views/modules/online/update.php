@@ -3,14 +3,14 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\OfflineModules */
+/* @var $model common\models\OnlineModules */
 
-$this->title = 'Update Offline Modules: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Offline Modules', 'url' => ['index']];
+$this->title = 'Update Online Modules: ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Online Modules', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="offline-modules-update">
+<div class="online-modules-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

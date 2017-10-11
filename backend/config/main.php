@@ -42,9 +42,11 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
-                'modules' => 'modules/index',
+                'modules/offline' => 'modules/index',
+                'modules/online' => 'online-modules/index',
                 'login' => 'site/login',
-                'modules/<action>' => 'modules/<action>',
+                'modules/offline/<action>' => 'modules/<action>',
+                'modules/online/<action>' => 'online-modules/<action>',
                 'user/<action>' => 'user/<action>',
                 'user' => 'user/index'
                 ],

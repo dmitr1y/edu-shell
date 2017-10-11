@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\OfflineModulesSearch */
+/* @var $model common\models\OnlineModulesSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="offline-modules-search">
+<div class="online-modules-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -19,21 +19,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name') ?>
 
-    <?= $form->field($model, 'description') ?>
+    <?= $form->field($model, 'url') ?>
 
-    <?= $form->field($model, 'win') ?>
+    <?= $form->field($model, 'desription') ?>
 
-    <?= $form->field($model, 'mac') ?>
-
-    <?php // echo $form->field($model, 'lin') ?>
-
-    <?php // echo $form->field($model, 'libs') ?>
-
-    <?php // echo $form->field($model, 'instruction') ?>
-
-    <?php // echo $form->field($model, 'url') ?>
-
-    <?php // echo $form->field($model, 'slug') ?>
+    <?= $form->field($model, 'slug') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -1,14 +1,15 @@
 <?php
 
 /* @var $this \yii\web\View */
+
 /* @var $content string */
 
 use backend\assets\AppAsset;
-use yii\helpers\Html;
+use common\widgets\Alert;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
-use common\widgets\Alert;
 
 AppAsset::register($this);
 ?>
@@ -42,11 +43,18 @@ AppAsset::register($this);
         $menuItems[] = ['label' => 'Войти', 'url' => ['/site/login']];
     } else {
 //        check admin permissions
-        if (Yii::$app->user->can('viewAdmin')){
-            $menuItems= [
-                    ['label' => 'Модули', 'url' => ['/modules']],
-                    ['label' => 'Пользователи', 'url' => ['/user']],
-                    ['label' => 'Новости', 'url' => ['/news']],
+        if (Yii::$app->user->can('viewAdmin')) {
+            $menuItems = [
+                [
+                    'label' => 'Модули',
+                    'items' => [
+                        ['label' => 'Офллайн модули', 'url' => '/modules/offline'],
+                        ['label' => 'Онлайн модули', 'url' => '/modules/online'],
+                    ],
+                ],
+                ['label' => 'Пользователи', 'url' => ['/user']],
+                ['label' => 'Новости', 'url' => ['/news']],
+
             ];
 
         }
