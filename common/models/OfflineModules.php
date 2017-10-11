@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace common\models;
 
 use yii\behaviors\SluggableBehavior;
 
@@ -25,7 +25,7 @@ class OfflineModules extends \yii\db\ActiveRecord
         return [
             [
                 'class' => SluggableBehavior::className(),
-                'attribute' => 'title',
+                'attribute' => 'slug',
             ],
         ];
     }

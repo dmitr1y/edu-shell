@@ -44,7 +44,10 @@ return [
                 'modules' => 'edu/default/index',
                 'modules/offline/<slug>' => 'edu/default/offline',
                 'modules/online/<slug>' => 'edu/default/online',
+                'lectures/<action>' => 'lectures/default/<action>',
+                'lectures' => 'lectures/default/index',
                 '' => 'site/index',
+                '<action>' => 'site/<action>',
                 [
                     'pattern' => '<controller>/<action>',
                     'route' => '<controller>/<action>',
@@ -65,6 +68,9 @@ return [
     'modules' => [
         'edu' => [
             'class' => 'app\modules\edu\EduModule',
+        ],
+        'lectures' => [
+            'class' => 'app\modules\lectures\LecturesModule',
         ],
     ],
     'params' => $params,

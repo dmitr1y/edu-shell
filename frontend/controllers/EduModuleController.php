@@ -2,11 +2,11 @@
 
 namespace app\controllers;
 
+use common\models\OfflineModulesSearch;
 use frontend\controllers\SiteController;
-use frontend\models\EduModule;
 use Yii;
-use app\models\OfflineModules;
-use app\models\ModulesSearch;
+use common\models\OfflineModules;
+use common\models\ModulesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -61,7 +61,7 @@ class EduModuleController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new ModulesSearch();
+        $searchModel = new OfflineModulesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [

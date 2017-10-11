@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\OfflineModules */
+/* @var $model common\models\OfflineModules */
 
 $this->title = 'Update Offline Modules: ' . $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Offline Modules', 'url' => ['index']];

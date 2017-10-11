@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\OfflineModules */
+/* @var $model common\models\OfflineModules */
 
 $this->title = 'Create Offline Modules';
 $this->params['breadcrumbs'][] = ['label' => 'Offline Modules', 'url' => ['index']];

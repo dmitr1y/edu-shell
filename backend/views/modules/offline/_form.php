@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\OfflineModules */
+/* @var $model common\models\OfflineModules */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -27,8 +27,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'instruction')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'url')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

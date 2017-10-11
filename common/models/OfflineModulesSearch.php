@@ -1,16 +1,16 @@
 <?php
 
-namespace app\models;
+namespace common\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\OnlineModules;
+use common\models\OfflineModules;
 
 /**
- * OnlineModulesSearch represents the model behind the search form about `app\models\OnlineModules`.
+ * OfflineModulesSearch represents the model behind the search form about `common\models\OfflineModules`.
  */
-class OnlineModulesSearch extends OnlineModules
+class OfflineModulesSearch extends OfflineModules
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class OnlineModulesSearch extends OnlineModules
     public function rules()
     {
         return [
-            [['column_1'], 'integer'],
-            [['name', 'url', 'desription'], 'safe'],
+            [['id', 'win', 'mac', 'lin'], 'integer'],
+            [['name', 'description', 'libs', 'instruction', 'url', 'slug'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class OnlineModulesSearch extends OnlineModules
      */
     public function search($params)
     {
-        $query = OnlineModules::find();
+        $query = OfflineModules::find();
 
         // add conditions that should always apply here
 
@@ -59,12 +59,18 @@ class OnlineModulesSearch extends OnlineModules
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'column_1' => $this->column_1,
+            'id' => $this->id,
+            'win' => $this->win,
+            'mac' => $this->mac,
+            'lin' => $this->lin,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'libs', $this->libs])
+            ->andFilterWhere(['like', 'instruction', $this->instruction])
             ->andFilterWhere(['like', 'url', $this->url])
-            ->andFilterWhere(['like', 'desription', $this->desription]);
+            ->andFilterWhere(['like', 'slug', $this->slug]);
 
         return $dataProvider;
     }

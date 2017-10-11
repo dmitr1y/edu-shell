@@ -3,15 +3,14 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\OfflineModules;
-use backend\models\OfflineModulesSearch;
-use yii\filters\AccessControl;
+use common\models\OfflineModules;
+use common\models\OfflineModulesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * OfllineModulesController implements the CRUD actions for OfflineModules model.
+ * ModulesController implements the CRUD actions for OfflineModules model.
  */
 class ModulesController extends Controller
 {
@@ -27,16 +26,6 @@ class ModulesController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['index', 'view', 'create', 'update', 'delete'],
-                        'allow' => true,
-                        'roles' => ['viewAdmin'],
-                    ],
-                ],
-            ]
         ];
     }
 
@@ -49,7 +38,7 @@ class ModulesController extends Controller
         $searchModel = new OfflineModulesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
+        return $this->render('offline/index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -62,7 +51,7 @@ class ModulesController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
+        return $this->render('offline/view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -79,7 +68,7 @@ class ModulesController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('create', [
+            return $this->render('offline/create', [
                 'model' => $model,
             ]);
         }
@@ -98,7 +87,7 @@ class ModulesController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('update', [
+            return $this->render('offline/update', [
                 'model' => $model,
             ]);
         }
