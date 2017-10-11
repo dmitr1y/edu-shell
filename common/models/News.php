@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\filters\AccessControl;
 
 /**
  * This is the model class for table "news".
@@ -17,6 +18,7 @@ use Yii;
  */
 class News extends \yii\db\ActiveRecord
 {
+
     /**
      * @inheritdoc
      */
