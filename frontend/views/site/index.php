@@ -11,7 +11,7 @@ $this->title = 'Edu modules';
 
         <p class="lead">Выберите интересующий вас модуль.</p>
 
-        <p><a class="btn btn-lg btn-success" href="?r=site%2Fmodules">Перейти к выбору</a></p>
+        <p><a class="btn btn-lg btn-success" href="/modules">Перейти к выбору</a></p>
     </div>
 
     <div class="body-content">

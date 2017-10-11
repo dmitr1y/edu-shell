@@ -38,6 +38,7 @@ AppAsset::register($this);
     $menuItems = [
         ['label' => 'Главная', 'url' => ['/']],
         ['label' => 'Модули', 'url' => ['/modules']],
+        ['label' => 'Новости', 'url' => ['/news']],
         ['label' => 'Контакты', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
