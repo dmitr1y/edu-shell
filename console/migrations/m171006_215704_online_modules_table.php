@@ -25,9 +25,7 @@ class m171006_215704_online_modules_table extends Migration
 
     public function safeDown()
     {
-//        echo "m171006_215704_online_modules_table cannot be reverted.\n";
         $this->dropTable('online_modules');
-        return false;
     }
 
     /*

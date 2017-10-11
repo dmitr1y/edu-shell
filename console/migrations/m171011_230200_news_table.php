@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m171006_215715_offline_modules_table extends Migration
+class m171011_230200_news_table extends Migration
 {
     public function safeUp()
     {
@@ -14,23 +14,21 @@ class m171006_215715_offline_modules_table extends Migration
 //        $this->db->schema->getTableSchema('my_table', true) === null
         if ($this->db->schema->getTableSchema('offline_modules') === null) {
             $this->createTable('offline_modules', [
-                'id' => $this->primaryKey(),
-                'name' => $this->string()->notNull()->unique(),
-                'description' => $this->string(),
-                'win' => $this->boolean()->defaultValue(0),
-                'mac' => $this->boolean()->defaultValue(0),
-                'lin' => $this->boolean()->defaultValue(0),
-                'libs' => $this->string(),
-                'instruction' => $this->text(),
-                'url' => $this->text()->notNull(),
-                'slug' => $this->string()->unique(),
+                'id' => $this->primaryKey()->unique(),
+                'header' => $this->string()->notNull(),
+                'content' => $this->text()->notNull(),
+                'author' => $this->string()->notNull(),
+                'date' => $this->timestamp()->defaultValue(['expression'=>'CURRENT_TIMESTAMP']),
+                'type' => $this->string()->defaultValue('normal'),
+                'anons' => $this->text(),
+                'slug' => $this->text()->unique(),
             ], $tableOptions);
         }
     }
 
     public function safeDown()
     {
-        $this->dropTable('offline_modules');
+        $this->dropTable('news');
     }
 
     /*
@@ -42,7 +40,7 @@ class m171006_215715_offline_modules_table extends Migration
 
     public function down()
     {
-        echo "m171006_215715_offline_modules_table cannot be reverted.\n";
+        echo "m171011_230200_news_table cannot be reverted.\n";
 
         return false;
     }
