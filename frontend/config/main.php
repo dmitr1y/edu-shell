@@ -46,6 +46,7 @@ return [
                 'modules/online/<slug>' => 'edu/default/online',
                 'lectures/<action>' => 'lectures/default/<action>',
                 'lectures' => 'lectures/default/index',
+                'news' => 'news/index',
                 '' => 'site/index',
                 '<action>' => 'site/<action>',
                 [
