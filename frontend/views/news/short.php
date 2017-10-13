@@ -3,7 +3,7 @@
         <h3 class="panel-title"><a href="<?= '/news/' . $model->slug ?>"> <?= $model->header ?> </a></h3>
     </div>
     <div class="panel-body">
-        short content
+        <?=$model->anons;?>
     </div>
     <div class="panel-footer">
         <p>Автор: <b><?= $model->author ?></b> Дата публикации: <b><?= $model->date ?></p></b>
