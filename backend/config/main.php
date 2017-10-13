@@ -16,11 +16,11 @@ return [
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
-        ],
+//        'user' => [
+//            'identityClass' => 'common\models\User',
+//            'enableAutoLogin' => true,
+//            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+//        ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
             'name' => 'main-edu',
@@ -51,9 +51,9 @@ return [
                 'user' => 'user/index'
                 ],
         ],
-        'authManager' => [
-            'class' => 'yii\rbac\DbManager',
-        ],
+//        'authManager' => [
+//            'class' => 'yii\rbac\DbManager',
+//        ],
         'db'  => require('db.php'),
     ],
     'params' => $params,

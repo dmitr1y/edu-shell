@@ -15,11 +15,11 @@ return [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
-        ],
+//        'user' => [
+//            'identityClass' => 'common\models\User',
+//            'enableAutoLogin' => true,
+//            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+//        ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
             'name' => 'main-edu',
@@ -49,6 +49,11 @@ return [
                 'news' => 'news/index',
                 'news/<slug>' => 'news/posts',
                 '' => 'site/index',
+                'login' => '/user-management/auth/login',
+                'logout' => '/user-management/auth/logout',
+                'registration' => '/user-management/auth/registration',
+                'change-own-password' => '/user-management/auth/password-recovery',
+                'confirm-email' => '/user-management/auth/confirm-email',
                 '<action>' => 'site/<action>',
                 [
                     'pattern' => '<controller>/<action>',
@@ -62,9 +67,9 @@ return [
                 ],
             ],
         ],
-        'authManager' => [
-            'class' => 'yii\rbac\DbManager',
-        ],
+//        'authManager' => [
+//            'class' => 'yii\rbac\DbManager',
+//        ],
         'db' => require('db.php'),
     ],
     'modules' => [

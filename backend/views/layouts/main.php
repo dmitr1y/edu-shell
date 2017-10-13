@@ -6,6 +6,8 @@
 
 use backend\assets\AppAsset;
 use common\widgets\Alert;
+use webvimark\modules\UserManagement\components\GhostNav;
+use webvimark\modules\UserManagement\UserManagementModule;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Html;
@@ -43,7 +45,7 @@ AppAsset::register($this);
         $menuItems[] = ['label' => 'Войти', 'url' => ['/site/login']];
     } else {
 //        check admin permissions
-        if (Yii::$app->user->can('viewAdmin')) {
+//        if (Yii::$app->user->can('viewAdmin')) {
             $menuItems = [
                 [
                     'label' => 'Модули',
@@ -52,12 +54,18 @@ AppAsset::register($this);
                         ['label' => 'Онлайн модули', 'url' => '/modules/online'],
                     ],
                 ],
-                ['label' => 'Пользователи', 'url' => ['/user']],
+                ['label' => 'Пользователи',
+                    'items' => [['label' => UserManagementModule::t('back', 'Users'), 'url' => ['/user-management/user/index']],
+                    ['label' => UserManagementModule::t('back', 'Roles'), 'url' => ['/user-management/role/index']],
+                    ['label' => UserManagementModule::t('back', 'Permissions'), 'url' => ['/user-management/permission/index']],
+                    ['label' => UserManagementModule::t('back', 'Permission groups'), 'url' => ['/user-management/auth-item-group/index']],
+                    ['label' => UserManagementModule::t('back', 'Visit log'), 'url' => ['/user-management/user-visit-log/index']],
+                    ]],
                 ['label' => 'Новости', 'url' => ['/news']],
 
             ];
 
-        }
+//        }
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
@@ -67,7 +75,7 @@ AppAsset::register($this);
             . Html::endForm()
             . '</li>';
     }
-    echo Nav::widget([
+    echo GhostNav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
     ]);

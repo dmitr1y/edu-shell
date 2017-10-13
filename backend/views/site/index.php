@@ -2,8 +2,13 @@
 
 /* @var $this yii\web\View */
 
+use webvimark\modules\UserManagement\components\GhostMenu;
+use webvimark\modules\UserManagement\UserManagementModule;
+
 $this->title = 'Edu-modules admin';
+
 ?>
+
 <div class="site-index">
 
     <div class="jumbotron">

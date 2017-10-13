@@ -21,7 +21,8 @@
         "yandex/translate-api": "1.5.2",
         "mihaildev/yii2-ckeditor": "1.0.1",
         "mihaildev/yii2-elfinder": "1.2.2",
-        "romdim/yii2-bootstrap-material": "1.0"
+        "romdim/yii2-bootstrap-material": "1.0",
+        "webvimark/module-user-management": "1.0.13"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
