@@ -48,7 +48,7 @@ return [
                 'lectures' => 'lectures/default/index',
                 'news' => 'news/index',
                 'news/<slug>' => 'news/posts',
-//                '' => 'site/index',
+                '' => 'site/index',
                 '<action>' => 'site/<action>',
                 [
                     'pattern' => '<controller>/<action>',
