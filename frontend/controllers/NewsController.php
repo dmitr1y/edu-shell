@@ -36,9 +36,9 @@ class NewsController extends Controller
                         'roles' => ['viewAdmin'],
                     ],
                     [
-                        'actions' => ['index'],
+                        'actions' => ['index', 'posts'],
                         'allow' => true,
-                        'roles' => ['?'],
+                        'roles' => ['?','@'],
                     ],
                 ],
             ],
@@ -137,5 +137,18 @@ class NewsController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    protected function findModelBySlug($slug)
+    {
+        if (($model = News::findOne(['slug' => $slug])) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    public function actionPosts($slug){
+        return $this->render('detail',['model' => $this->findModelBySlug($slug)]);
     }
 }
